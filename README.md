@@ -35,7 +35,7 @@ Takes request and response objects to either stop a function or continue.
 
 - [ ] Describe a Resource?
 
-A resource is everything we interact with, accessible by a unique URL. They have multiple representations and are communicated over a stateless protocol. Management is done through methods.
+A resource is everything we interact with, accessible by a unique URI. They have multiple representations and are communicated over a stateless protocol. Management is done through methods.
 
 - [ ] What can the API return to help clients know if a request was successful?
 

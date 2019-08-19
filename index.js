@@ -14,6 +14,8 @@ Go code!
 */
 
 const express = require('express');
+const projectModel = require('./data/helpers/projectModel')
+const actionModel = require('./data/helpers/actionModel')
 const server = express();
 
 server.listen(4000, () => {
