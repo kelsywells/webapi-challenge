@@ -26,13 +26,25 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express is a Node.js module that makes it easier create applications. 
+Uses routing to determine where methods are applied, and uses extension methods like res.status() to make creating api servers easier.
+
 - [ ] Describe Middleware?
+
+Takes request and response objects to either stop a function or continue.
 
 - [ ] Describe a Resource?
 
+A resource is everything we interact with, accessible by a unique URL. They have multiple representations and are communicated over a stateless protocol. Management is done through methods.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+Return the info that was requested, or a res.status(200)/(201) message.
+
 - [ ] How can we partition our application into sub-applications?
+
+By using Express Routers with their own middleware.
+
 
 ## Project Setup
 

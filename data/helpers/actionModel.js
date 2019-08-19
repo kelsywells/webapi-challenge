@@ -119,9 +119,9 @@ server.delete('/:id', (req, res) => {
       message: 'Deleted.'
     })
     else{
-      res.status(404).json{
+      res.status(404).json({
         message: 'Invalid ID.'
-      }
+      })
     }
   })
   .catch(err => {
