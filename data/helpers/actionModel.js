@@ -109,3 +109,24 @@ server.update('/:id', (req, res) => {
     })
   })
 })
+
+server.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  db.remove(id)
+  .then(deleted => {
+    if(deleted)
+    res.status(200).json({
+      message: 'Deleted.'
+    })
+    else{
+      res.status(404).json{
+        message: 'Invalid ID.'
+      }
+    }
+  })
+  .catch(err => {
+    res.status(500).json({
+      Message: 'Could not delete at this time.'
+    })
+  })
+})
