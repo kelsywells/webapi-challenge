@@ -14,9 +14,15 @@ Go code!
 */
 
 const express = require('express');
-const projectModel = require('./data/helpers/projectModel')
-const actionModel = require('./data/helpers/actionModel')
 const server = express();
+const actions= require('./Actions');
+const projects= require('./Projects');
+server.use(express.json());
+server.use('/api/projects', projects);
+server.use('/api/actions', actions);
+
+
+
 
 server.listen(4000, () => {
     console.log('Server is running on port 4000...')

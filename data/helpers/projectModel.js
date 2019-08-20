@@ -1,7 +1,5 @@
 const db = require('../dbConfig.js');
-const express = require('express');
-const server= express();
-
+const mappers = require('./mappers');
 
 module.exports = {
   get,
@@ -61,87 +59,3 @@ function getProjectActions(projectId) {
     .where('project_id', projectId)
     .then(actions => actions.map(action => mappers.actionToBody(action)));
 }
-
-server.get('/:id', (req, res) => {
-  const { description, name } = req.body;
-
-  db.find(description, name)
-
-   .then(projects => {
-     if (!description || !name)
-      res.status(400).json({
-        message: 'Please use a valid name and description.'
-      })
-        else {
-          res.status(200).json(projects)
-        }
-      }
-   )
-  .catch(err => {
-      res.status(500).json({
-        message: 'Could not retrieve projects.'
-      })
-    })
-   })
-
-   server.put('/', (req, res) => {
-    const { object } = req.body;
-    db.insert(object)
-    .then(added => {
-      if(added)
-      res.status(200).json(added)
-      else {
-        res.status(400).json({
-          message: 'Invalid update.'
-        })
-      }
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: 'Could not add at this time.'
-      })
-    })
-  })
-
-  server.update('/:id', (req, res) => {
-    const { id } = req.params;
-    const { object } = req.body;
-    
-    db.put( id, object )
-    .then( updated => {
-      if(!id || !object)
-        res.status(404).json({
-          error: null
-        })
-      else {
-        res.status(200).json(updated)
-      }
-    }
-    )
-    .catch(err => {
-      res.status(500).json({
-        message: 'Could not update at this time.'
-      })
-    })
-  })
-
-  server.delete('/:id', (req, res) => {
-    const { id } = req.params;
-    db.remove(id)
-    .then(deleted => {
-      if(deleted)
-      res.status(200).json({
-        message: 'Deleted.'
-      })
-      else{
-        res.status(404).json({
-          message: 'Invalid ID.'
-        })
-      }
-    })
-    .catch(err => {
-      res.status(500).json({
-        Message: 'Could not delete at this time.'
-      })
-    })
-  })
