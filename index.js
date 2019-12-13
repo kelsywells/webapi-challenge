@@ -18,6 +18,7 @@ const server = express();
 const actions= require('./Actions');
 const projects= require('./Projects');
 const port= process.env.PORT || 4000;
+const host= process.env.PORT || "0.0.0.0";
 server.use(express.json());
 server.use('/api/projects', projects);
 server.use('/api/actions', actions);
