@@ -24,6 +24,11 @@ server.use('/api/actions', actions);
 require('dotenv').config();
 
 
+server.get('/', (req, res) => {
+    res.json({
+        message: `Welcome to my Heroku site!`
+    })
+})
 
 
 server.listen(4000, () => {

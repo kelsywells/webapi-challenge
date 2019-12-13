@@ -25,6 +25,11 @@ ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+alert-node@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/alert-node/-/alert-node-2.0.3.tgz#1467ab51d71f26f568f2f11df7a9998858488f0f"
+  integrity sha512-u+NsMvcK8U/7MO6UMIdgrRo8VOxV4oaxfeIGHuUaRRFuc2GS/GsfJ0iA7Gwz2Dmp8NZg/nA83ixTGhlYZdfMmg==
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
