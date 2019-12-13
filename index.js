@@ -17,13 +17,15 @@ const express = require('express');
 const server = express();
 const actions= require('./Actions');
 const projects= require('./Projects');
+const port= process.env.PORT || 4000;
 server.use(express.json());
 server.use('/api/projects', projects);
 server.use('/api/actions', actions);
+require('dotenv').config();
 
 
 
 
 server.listen(4000, () => {
-    console.log('Server is running on port 4000...')
+    console.log(`Server is running on port ${port}...`)
 })
